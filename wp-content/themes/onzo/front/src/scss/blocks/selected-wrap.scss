@@ -1,0 +1,25 @@
+.selected-wrap {
+
+  &--home {
+    padding-bottom: 115px;
+    background-image: linear-gradient(to bottom, #000 80px, transparent 80px);
+    background-position: top;
+
+    @include desktop {
+      background-image: linear-gradient(to bottom, #000 120px, transparent 120px);
+    }
+  }
+
+  &--content {
+    @include desktop {
+      margin-bottom: 240px;
+    }
+  }
+
+  &--services {
+
+    @include desktop {
+      margin-bottom: 20px;
+    }
+  }
+}

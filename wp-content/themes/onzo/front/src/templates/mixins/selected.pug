@@ -1,0 +1,43 @@
+mixin selected(data, extraClass="", headline, title)
+  section.selected(class=extraClass)
+    if headline
+      h2.selected__headline.headline!= headline
+
+    .selected__inner
+      if !headline
+        h2.selected__title.title!= title
+      else
+        p.selected__title.title!= title
+
+      each project in data
+        .selected__item.project(class=project.mod ? `project--${project.mod}` : "")
+          .project__gallery-wrap
+            a.project__gallery(href="case.html")
+              each pic in project.pics
+                .project__pic-wrap
+                  +image(
+                    pic,
+                    {
+                      class: "project__pic",
+                      alt: project.title
+                    }
+                  )
+          a.project__content(href="case.html")
+            h3.project__title.headline!= project.title
+            p.project__descr.title!= project.descr
+            p.project__text!= project.text
+            .project__bottom.case-meta
+              ul.case-meta__list
+                li.case-meta__item
+                  +icon("location", 20, 20)
+                  span!= project.meta.city
+                li.case-meta__item
+                  +icon("area", 20, 20)
+                  span!= project.meta.area
+                li.case-meta__item
+                  +icon("time", 20, 20)
+                  span!= project.meta.time
+              span.case-meta__more(href="#")
+                +icon("arrow", 20, 20)
+
+    a.selected__more.boxed-link.boxed-link--big(href="cases.html") See all projects

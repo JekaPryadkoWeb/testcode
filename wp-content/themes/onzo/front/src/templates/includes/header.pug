@@ -1,0 +1,158 @@
+-
+  var navServices = [
+    {
+      link: "services.html",
+      text: "Private",
+      submenu: [
+        {
+          link: "service.html",
+          text: "House design"
+        },
+        {
+          link: "service.html",
+          text: "Apartments design"
+        },
+      ]
+    },
+    {
+      link: "services.html",
+      text: "Business",
+      submenu: [
+        {
+          link: "service.html",
+          text: "Office design"
+        },
+        {
+          link: "service.html",
+          text: "Restaurant design"
+        },
+        {
+          link: "service.html",
+          text: "Shop design"
+        },
+        {
+          link: "service.html",
+          text: "Hotel design"
+        },
+        {
+          link: "service.html",
+          text: "Mall design"
+        },
+        {
+          link: "service.html",
+          text: "Beauty salon design"
+        },
+        {
+          link: "service.html",
+          text: "Club design"
+        },
+        {
+          link: "service.html",
+          text: "Cinema design"
+        },
+        {
+          link: "service.html",
+          text: "Theatre design"
+        },
+        {
+          link: "service.html",
+          text: "Architecture buildings"
+        },
+      ]
+    },
+    {
+      link: "services.html",
+      text: "Engineering",
+      submenu: [
+        {
+          link: "service.html",
+          text: "Heat supply"
+        },
+        {
+          link: "service.html",
+          text: "Water supply and sewerage"
+        },
+        {
+          link: "service.html",
+          text: "Outdoor Lighting"
+        },
+        {
+          link: "service.html",
+          text: "Power consumption"
+        },
+        {
+          link: "service.html",
+          text: "Ventilation"
+        },
+        {
+          link: "service.html",
+          text: "Signaling and communication"
+        },
+        {
+          link: "service.html",
+          text: "Gas supply"
+        },
+      ]
+    },
+  ]
+
+-
+  var navPages = [
+    {
+      link: "cases.html",
+      text: "Cases"
+    },
+    {
+      link: "blog.html",
+      text: "Blog"
+    },
+  ]
+
+-
+  var langs = [
+    {
+      link: "",
+      text: "Eng",
+      submenu: [
+        {
+          link: "#",
+          text: "Ua"
+        },
+        {
+          link: "#",
+          text: "Ru"
+        },
+      ]
+    }
+  ]
+
+mixin menuList(data, extraClass="")
+  ul.menu__list.links-wrap(class=extraClass)
+    each item in data
+      if !item.submenu || !item.submenu.length
+        li
+          a(href=item.link)!= item.text
+
+      else
+        li.menu-item-has-children
+          span!= item.text
+          ul.sub-menu
+            each subitem in item.submenu
+              li: a(href=subitem.link)!= subitem.text
+
+header.header(class=headerClass ? headerClass : "")
+  .header__inner.container
+    a.header__logo(href="index.html")
+      img(src="assets/img/logo.svg", width="206", height="50", alt="Onzo design")
+    nav.header__menu.menu
+      p.menu__subtitle Services for:
+      +menuList(navServices, "menu__list--separator")
+      +menuList(navPages)
+
+      a.menu__btn.btn.btn--bg-black.js-open-popup(href="contacts.html", data-popup="feedback") Contact us
+
+      +menuList(langs)
+
+  button.header__menu-btn(type="button")
+    span.header__menu-btn-text Menu
+    .header__menu-btn-frame

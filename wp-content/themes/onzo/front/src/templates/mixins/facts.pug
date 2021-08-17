@@ -1,0 +1,6 @@
+mixin facts(data, extraClass="")
+  ul.facts(class=extraClass)
+    each item in data
+      li.facts__item
+        span.facts__fact!= item.fact
+        span.facts__descr!= item.descr

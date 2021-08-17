@@ -1,0 +1,41 @@
+.services-list {
+  @include reset-list;
+
+  &--white {
+    .services-list__link {
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+.services-list__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @include desktop {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.services-list__link {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #000000;
+
+  @include desktop {
+    padding: 40px 50px;
+    font-size: 48px;
+
+    &--inverted {
+      padding: 40px 85px;
+    }
+  }
+}

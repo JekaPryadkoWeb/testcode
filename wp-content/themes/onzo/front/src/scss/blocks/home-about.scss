@@ -1,0 +1,60 @@
+.home-about {
+  position: relative;
+  overflow: hidden;
+
+  @include desktop {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: desk-size(1670 - 525);
+      bottom: 0;
+      z-index: -1;
+
+      display: block;
+      width: 100vw;
+      background-color: #000;
+      content: "";
+    }
+  }
+}
+
+.home-about__inner {
+  @include desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.home-about__content {
+  @include desktop {
+    width: desk-size(825);
+  }
+}
+
+.home-about__title {
+  margin-bottom: 30px;
+}
+
+.home-about__descr {
+  margin-bottom: 30px;
+
+}
+
+.home-about__text {
+  margin-bottom: 40px;
+
+}
+
+.home-about__link {
+
+}
+
+.home-about__pic {
+  @include desktop {
+    width: desk-size(684);
+  }
+}

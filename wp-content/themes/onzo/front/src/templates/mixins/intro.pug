@@ -1,0 +1,25 @@
+include /mixins/breadcrumbs
+
+mixin intro(args)
+  section.intro(class=args.extraClass ? args.extraClass : "")
+    .container
+      .intro__top
+        if args.breadcrumbsData
+          +breadcrumbs(args.breadcrumbsData)
+
+        if args.tags
+          ul.intro__tags
+            each item in args.tags
+              li.intro__tags-item
+                a(href="#")!= item
+
+      .intro__head
+        h1.intro__title.page-title!= args.title
+        p.intro__lead.lead(class=args.leadMod ? `intro__lead--${args.leadMod}` : "")!= args.lead
+
+        if args.text
+          .intro__text(class=args.textMod ? `intro__text--${args.textMod}` : "")
+            p!= args.text
+
+      .intro__content
+        block

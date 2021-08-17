@@ -1,0 +1,67 @@
+.content-rule {
+
+  & > h1,
+  & > h2,
+  & > h3 {
+    @extend .headline;
+    margin-top: 70px;
+
+    @include desktop {
+      margin-top: 120px;
+    }
+  }
+
+  & > ul,
+  & > ol {
+    @include reset-list;
+    margin-bottom: 1.67em;
+
+    li {
+      position: relative;
+      padding-left: 1.67em;
+
+      &::before {
+        position: absolute;
+        top: .7em;
+        left: 0;
+        display: block;
+        content: "";
+      }
+    }
+  }
+
+  & > ul li {
+
+    &::before {
+      width: .42em;
+      height: .42em;
+      margin-top: -0.21em;
+      margin-left: .21em;
+      background-color: #000000;
+    }
+  }
+
+  & > ol {
+    counter-reset: list;
+
+    li {
+      counter-increment: list;
+
+      &::before {
+        margin-top: -0.5em;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1;
+        content: "0"counter(list)".";
+      }
+    }
+  }
+
+  & > p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1.4em;
+    }
+  }
+}

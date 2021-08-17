@@ -1,0 +1,48 @@
+.facts {
+  @include reset-list;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: -24px;
+
+  @include desktop {
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+}
+
+.facts__item {
+  margin: 0 24px 24px;
+  text-align: center;
+
+  @include desktop {
+    margin: 0;
+  }
+}
+
+.facts__fact {
+  display: block;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+
+  @include desktop {
+    font-size: 120px;
+  }
+
+  @include middle-desktop {
+    font-size: desk-middle-vw(120);
+  }
+}
+
+.facts__descr {
+  display: block;
+  margin-top: 3px;
+  font-size: 20px;
+
+  @include desktop {
+    margin-top: 6px;
+    font-size: 24px;
+  }
+}

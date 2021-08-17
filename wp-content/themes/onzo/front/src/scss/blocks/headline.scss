@@ -1,0 +1,11 @@
+.headline {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.2;
+
+  @include desktop {
+    font-size: 60px;
+  }
+}

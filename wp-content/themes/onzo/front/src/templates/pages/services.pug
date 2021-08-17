@@ -1,0 +1,100 @@
+extends /layout
+include /mixins/selected
+include /mixins/services-list
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "services.html",
+        text: "services"
+      },
+    ]
+
+block content
+  +intro({
+    title: "Services",
+    lead: "Our task is to hear the client's need and create exactly the design that he represents",
+    text: "We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards.",
+    extraClass: "intro--services",
+    leadMod: "wide",
+    breadcrumbsData
+  })
+
+  .services-page
+    .container
+      .services-page__preview
+        .pic-wrap
+          +image(
+            "assets/img/delete/services/services-pic-01",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+      section.services-page__group
+        h2.services-page__title.headline Private
+        .services-page__pic
+          +image("assets/img/delete/services/services-pic-02", { alt: "" })
+
+        +servicesList(
+          [
+            "House design",
+            "Apartments design",
+          ],
+          "services-page__list",
+          true
+        )
+
+      section.services-page__group
+        h2.services-page__title.headline Business
+        .services-page__pic
+          +image("assets/img/delete/services/services-pic-03", { alt: "" })
+
+        +servicesList(
+          [
+            "Office design",
+            "Restaurant design",
+            "Shop design",
+            "Hotel design",
+            "Mall design",
+            "Beauty salon design",
+            "Club design",
+            "Cinema design",
+            "Theatre design",
+            "Architecture buildings",
+          ],
+          "services-page__list",
+          true
+        )
+
+      section.services-page__group
+        h2.services-page__title.headline Engineering systems
+        .services-page__pic
+          +image("assets/img/delete/services/services-pic-04", { alt: "" })
+
+        +servicesList(
+          [
+            "Heat supply",
+            "Water supply and sewerage",
+            "Outdoor Lighting",
+            "Power consumption",
+            "Ventilation",
+            "Signaling and communication",
+            "Gas supply",
+          ],
+          "services-page__list",
+          true
+        )
+
+
+  .container
+    +selected(selectedWorks, "", "Inspect other our works", "Selected works")
+
+  include /includes/contact-us
+

@@ -1,0 +1,137 @@
+extends /layout
+include /mixins/pagenavi
+include /mixins/post
+include /mixins/scroll-up
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "blog.html",
+        text: "blog"
+      },
+    ]
+
+  -
+    var tags = [
+      {
+        text: "The most popular articles"
+      },
+      {
+        text: "Recent articles"
+      },
+      {
+        text: "All articles",
+        current: true
+      },
+      {
+        text: "Hotel design"
+      },
+      {
+        text: "Mall design"
+      },
+      {
+        text: "Beauty salon design"
+      },
+      {
+        text: "Cinema design"
+      },
+      {
+        text: "Theatre design"
+      },
+      {
+        text: "Office design "
+      },
+      {
+        text: "Restaurant design"
+      },
+      {
+        text: "Architecture buildings"
+      },
+      {
+        text: "Club design"
+      },
+    ]
+
+  -
+    var posts = [
+      {
+        pic: "assets/img/delete/blog-thumb-01",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-02",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-03",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-01",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-02",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-03",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-01",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-02",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+      {
+        pic: "assets/img/delete/blog-thumb-03",
+        title: "Fresh trends in office design ",
+        text: "We shared a lot of research we did while working on the project"
+      },
+    ]
+
+block content
+  +intro({
+    title: "Blog",
+    lead: "Articles and news",
+    breadcrumbsData
+  })
+    ul.hashtags.links-wrap
+      each item in tags
+        li.hashtags__item(class={"hashtags__item--current": item.current})
+          a.hashtags__link(href="#") ##{item.text}
+
+    form.search(action="https://echo.htmlacademy.ru", method="GET")
+      input.search__field.field(type="text", placeholder="Enter your request", required)
+      button.search__btn.btn(type="submit") Search
+
+  section.blog
+    .container
+      ol.blog__list
+        each item, i in posts
+          li.blog__item-wrap
+            +post(item, i, "blog__item")
+
+      .show-more
+        a.boxed-link.boxed-link--big(href="#") See more articles
+      +pagenavi()
+
+  +scrollUp()
+
+  include /includes/contact-us

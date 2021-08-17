@@ -1,0 +1,86 @@
+doctype html
+
+include mixins/icon
+include mixins/image
+include mixins/intro
+
+block vars
+  - var pageTitle = "Design and construction work for commercial premises | Onzo design"
+
+  -
+    var selectedWorks = [
+      {
+        mod: "large",
+        pics: [
+          "assets/img/delete/projects/project-preview-01-1",
+          "assets/img/delete/projects/project-preview-01-2",
+          "assets/img/delete/projects/project-preview-01-3",
+          //- "assets/img/delete/projects/project-preview-01-4",
+          //- "assets/img/delete/projects/project-preview-01-5",
+        ],
+        title: "Creative states",
+        descr: "Office space",
+        text: "CREATIVE STATES is one of the locations of the coworking network located on one of the last floors of the tallest business center in Kyiv Gulliver.",
+        meta: {
+          city: "Kiyv",
+          area: "1 562",
+          time: "2 month"
+        }
+      },
+      {
+        mod: "middle",
+        pics: [
+          "assets/img/delete/projects/project-preview-02-1",
+          "assets/img/delete/projects/project-preview-02-2",
+          "assets/img/delete/projects/project-preview-02-3",
+          "assets/img/delete/projects/project-preview-02-4",
+          "assets/img/delete/projects/project-preview-02-5",
+        ],
+        title: "Tsum",
+        descr: "Shopping mall",
+        text: "TSUM (Central Department Store) Kiev - one of the largest shops in Kiev, located in the city center at the intersection of Khreshchatyk and Bohdan Khmelnytsky.",
+        meta: {
+          city: "Kiyv",
+          area: "45 000",
+          time: "4 years"
+        }
+      },
+      {
+        mod: "small",
+        pics: [
+          "assets/img/delete/projects/project-preview-03-1",
+          "assets/img/delete/projects/project-preview-01-2",
+          "assets/img/delete/projects/project-preview-01-3",
+          //- "assets/img/delete/projects/project-preview-01-4",
+          //- "assets/img/delete/projects/project-preview-01-5",
+        ],
+        title: "IT-Dnipro",
+        descr: "Office space",
+        text: "An American corporation, another after the revenue grower, a software protection programmer, the largest software protection programmer for organizations, a great server hosting provider, and one of the top graders of the...",
+        meta: {
+          city: "Kiyv",
+          area: "1 300",
+          time: "4 month"
+        }
+      },
+    ]
+
+html.no-js.no-touch(lang="en")
+
+  include includes/head
+
+  body&attributes(attributes)
+    block top
+
+    include includes/header
+
+    main
+      block content
+
+    include includes/footer
+
+    include includes/popups
+
+    include includes/mob-menu
+
+    script(src="/assets/js/main.min.js")

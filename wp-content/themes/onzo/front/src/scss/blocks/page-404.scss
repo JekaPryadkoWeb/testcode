@@ -1,0 +1,59 @@
+.page-404 {
+  @include desktop {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 210px;
+    padding-bottom: 180px;
+  }
+}
+
+.page-404__inner {
+  height: 100%;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.page-404__pic {
+  margin-bottom: 35px;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include desktop {
+    width: desk-size(777);
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.page-404__content {
+
+  @include desktop {
+    width: desk-size(700);
+    padding-top: desk-size(74);
+  }
+}
+
+.page-404__title {
+  margin-bottom: 30px;
+
+  @include desktop {
+    margin-bottom: 16px;
+  }
+}
+
+.page-404__text {
+  margin-bottom: 40px;
+
+  @include desktop {
+    margin-bottom: 54px;
+  }
+}

@@ -1,0 +1,15 @@
+.nav {
+  @include reset-list;
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  a {}
+}

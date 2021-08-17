@@ -1,0 +1,9 @@
+mixin pagenavi()
+  .pagenavi
+    a.page-numbers.prev(href="#"): span.visually-hidden Previous page
+    a.page-numbers(href="#") 1
+    span.page-numbers.current(href="#", aria-current="page") 2
+    a.page-numbers(href="#") 3
+    span.page-numbers.dots ...
+    a.page-numbers(href="#") 10
+    a.page-numbers.next(href="#"): span.visually-hidden Next page

@@ -1,0 +1,10 @@
+.page-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.2;
+
+  @include desktop {
+    font-size: 80px;
+  }
+}

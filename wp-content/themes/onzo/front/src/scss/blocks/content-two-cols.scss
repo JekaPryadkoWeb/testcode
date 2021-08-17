@@ -1,0 +1,9 @@
+.content-two-cols {
+  &:not(:last-child) {
+    margin-bottom: 30px;
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.cases {
+  margin-top: -65px;
+
+  @include desktop {
+    margin-top: -120px;
+  }
+}
+
+.cases__list {
+  @include reset-list;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 120px;
+    margin-bottom: 110px;
+  }
+}

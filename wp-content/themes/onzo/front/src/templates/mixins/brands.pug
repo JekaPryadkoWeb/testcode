@@ -1,0 +1,11 @@
+mixin brands(data)
+  - var extraClass = data.extraClass || ""
+  .brands(class=data.mod ? `brands--${data.mod} ${extraClass}` : extraClass)
+    h2.brands__title.title!= data.title
+    p.brands__text.headline!= data.text
+
+    .brands__logos
+      if data.logos
+        each logo in data.logos
+          .brands__logo
+            img&attributes(logo)

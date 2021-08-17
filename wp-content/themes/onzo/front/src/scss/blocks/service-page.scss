@@ -1,0 +1,19 @@
+.service-page {
+  margin-top: -80px;
+  margin-bottom: 80px;
+
+  @include desktop {
+    margin-top: -120px;
+    margin-bottom: 120px;
+  }
+}
+
+.service-page__preview {
+  min-height: 80px;
+  margin-bottom: 80px;
+
+  @include desktop {
+    min-height: 120px;
+    margin-bottom: 120px;
+  }
+}

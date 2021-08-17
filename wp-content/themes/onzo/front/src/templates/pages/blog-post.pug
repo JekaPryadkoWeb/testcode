@@ -1,0 +1,130 @@
+extends /layout
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "blog.html",
+        text: "blog"
+      },
+      {
+        link: "#",
+        text: "about interior"
+      },
+      {
+        link: "#",
+        text: "Features Your Office interior Must Have"
+      },
+    ]
+
+block content
+  +intro({
+    title: "Features<br>Your Office interior Must Have",
+    lead: "About interior",
+    text: "An office interior is a perfect example of an organized space with a high degree of accessibility. The confines of an office call for an ambiance which fuels productivity and invigorates your workforce throughout the day.",
+    breadcrumbsData,
+    extraClass: "intro--article"
+  })
+
+  section.article
+    .container
+      .article__preview
+        .pic-wrap
+          +image(
+            "assets/img/delete/article/article-pic-01",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+      .conctructor
+        .text-column.content-rule
+          h2 Trends in office design are constantly evolving. The equipment should fit your work-space and the way it’s arranged can play a vital role in worker productivity and team confidence.
+
+          p As more millennial enter the workforce, managers must ensure their office environments feel welcoming to newcomers and foster a pleasant atmosphere in which to work and collaborate.
+          p An interior designer working with an office space will collect the client requirements, incorporate them with good office design, and look at various perspectives before finalizing on a solution. It’s also very important for the designer to be able to have an open channel of communication with the client. This ensures that if there are any parameters which clang with the client requirements, then the issue can be resolved immediately and there are no problems in the design process.
+          p We are always updated with the trending technologies and also aware of international trends that advance in interior design. Our expertise along with the use of high-end software tools allows us to create modified office designs for you that are as functional as they are attractive to the eye.
+          p No matter what kind of business you run, we know exactly how to transform your office into a highly serviceable space that people would love to work in. Just direct us your requirements and leave the rest to our interior designers. Bangalore-based organizations need to look no further than Ace Interiors, one of the best Office interior designers company in Bangalore, to set up an office that echoes the culture and persona of their firm.
+
+        .figure-tiles
+          .figure-tiles__pic.figure-tiles__pic--small
+            +image("assets/img/delete/article/article-pic-02")
+          .figure-tiles__text.figure-tiles__text--small
+            h3.figure-tiles__title Adaptable Furniture
+            p.figure-tiles__descr As more millennial enter the workforce, managers must ensure their office environments feel welcoming to newcomers and foster a pleasant atmosphere in which to work and collaborate.
+
+          .figure-tiles__pic.figure-tiles__pic--big
+            +image("assets/img/delete/article/article-pic-03")
+          .figure-tiles__text.figure-tiles__text--big
+            h3.figure-tiles__title Focus on Nature
+            p.figure-tiles__descr Nowadays many of the employees are conscious about nature. Making an effort to buy supportable products and reduce their carbon footprint, reflect their values by doing the same.
+
+        .text-column.content-rule
+          p When you hire someone, you are likely extending the offer based on a set of skills – not just one talent. Why shouldn’t your standards be the same for your office furniture? Choose pieces that are multi-functional so they can benefit your office in more way than one. Adaptable furniture contracts employees to change a room so it meets their needs at an agreed time. Then, people can reorganize chairs, benches, and tables when needed, giving teams greater sovereignty over their work surroundings —few simple things that each employee appreciates. Desirable, this small kind of work can save you money and give the better space in your office by choosing such simple roles.
+
+          p Modular furniture gives space that can be moved aside for private conversations. And even they can push furniture pieces together for team meetings. Height-adjustable desks will allow employees to stand or sit as they please, depending on what their needs are. These encourage healthy posture at work and can help some workers focus.
+
+          p Nowadays many of the employees are conscious about nature. Making an effort to buy supportable products and reduce their carbon footprint, reflect their values by doing the same. Assimilate rudiments of nature into your office design by bringing in plants or even creating a living wall is preferred. One way you can bring the natural world into your work environment is by getting items from brands that focus on sustainability. Be aware choose the items that makes an effort to be environmentally aware in its furniture design and renounce from adding unnecessary or wasteful elements to its products.
+
+        .figures.two-columns
+          .figure
+            .figure__pic
+              +image("assets/img/delete/article/article-pic-04")
+            .figure__content
+              h3.figure__title Integrate Technology
+              p.figure__text Today’s workforce is chiefly made up of millennials, with the younger Group beginning to filter into offices. These youthful employees have been using technology since childhood.
+
+          .figure
+            .figure__pic
+              +image("assets/img/delete/article/article-pic-05")
+            .figure__content
+              h3.figure__title Intentional Design
+              p.figure__text Be sure about office and what your employees want and need in an office setting. Also, be aware of what are the key elements that help in keeping your employees happy and healthy.
+
+        .text-column.content-rule
+          p Today’s workforce is chiefly made up of millennials, with the younger Group beginning to filter into offices. These youthful employees have been using technology since childhood. According to a study, we got to know that 80 percent of workers have said that technology, including mobile devices, laptops, and video conferencing capabilities, has changed their workplace for the healthier. New technologies allow the office to be much inflexible than before. Employees who work on tablets or laptops can pick up their work and take it with them – so why not make this easy for them? Equip your team with the capability to complete projects from any quiet corner in the office.
+
+          p Use sofas and comfortable chairs to make an inviting lounge area where people can work independently or as a team. Or, let team members share and collaborate at their desks by equipping workstations with monitor arms that allow people to easily move their computer monitors up, down or side to side.Gensler’s study found that 90 percent of defendants believed that office design is important to distinct and administrative efficiency. This shows how essential it is that the office’s atmosphere is designed precisely to encourage productivity and positivity. Be sure about office and what your employees want and need in an office setting. Also, be aware of what are the key elements that help in keeping your employees happy and healthy.
+
+        .pic-wrap
+          +image(
+            "assets/img/delete/article/article-pic-06",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+        .text-column.content-rule
+          h2 Conclusion
+          p Designing a workplace for the next generation will take careful forethought and intentional choices. Luckily, you can rely on Office Designers who will help you by guiding you through the process.
+          p No matter what kind of business you run, we know exactly how to transform your office into a highly serviceable space that people would love to work in. Just direct us your requirements and leave the rest to our interior designers. Ace Interiors, one of the best interior design companies in Bangalore will help you to set up an office that booms the culture and character of their firm.
+
+      footer.article__footer.text-column
+        .article__hashtags.links-wrap
+          a(href="#") # The most popular
+          a(href="#") # Office interior
+
+        .article__share
+          .article__share-text Share
+          ul.article__share-list.links-wrap
+            li.article__share-item
+              a.article__share-link(href="#")
+                +icon("linkedin", 24, 24)
+            li.article__share-item
+              a.article__share-link(href="#")
+                +icon("facebook", 24, 24)
+            li.article__share-item
+              a.article__share-link(href="#")
+                +icon("twitter", 24, 24)
+
+
+
+  include /includes/blog-similar
+
+  include /includes/contact-us

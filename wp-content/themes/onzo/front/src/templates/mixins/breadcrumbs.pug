@@ -1,0 +1,10 @@
+mixin breadcrumbs(data, extraClass="")
+  ul.breadcrumbs.links-wrap(class=extraClass)
+    each item, i in data
+      if i === data.length - 1
+        li.breadcrumbs__item
+          span!= item.text
+
+      else
+        li.breadcrumbs__item
+          a(href=item.link)!= item.text

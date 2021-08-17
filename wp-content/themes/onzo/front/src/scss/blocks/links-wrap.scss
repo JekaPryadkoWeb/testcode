@@ -1,0 +1,14 @@
+.links-wrap {
+
+  a {
+    color: currentColor;
+    transition-duration: .25s;
+    transition-property: color;
+
+    &[href]:hover,
+    &[href]:focus {
+      color: $red;
+      transition-duration: .15s;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+mixin mobMenuList(data, extraClass="")
+  ul.mob-menu__list(class=extraClass)
+    each item in data
+      if !item.submenu || !item.submenu.length
+        li
+          a(href=item.link)!= item.text
+
+      else
+        li.menu-item-has-children
+          span!= item.text
+          ul.sub-menu
+            a.mob-menu__back(href="#")
+              +icon("arrow", 18, 18)
+              span!= item.text
+            each subitem in item.submenu
+              li: a(href=subitem.link)!= subitem.text
+
+.mob-menu
+  .mob-menu__lang
+    a.mob-menu__lang-item.mob-menu__lang-item--current(href="#") Eng
+    a.mob-menu__lang-item(href="#") Ru
+    a.mob-menu__lang-item(href="#") Uk
+
+  .mob-menu__nav
+    .mob-menu__nav-subtitle Services for:
+    +mobMenuList(navServices)
+    +mobMenuList(navPages)
+
+  a.mob-menu__btn.btn.js-open-popup(href="contacts.html", data-popup="feedback") Contact us

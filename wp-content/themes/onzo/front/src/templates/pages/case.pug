@@ -1,0 +1,159 @@
+extends /layout
+include /mixins/facts
+include /mixins/selected
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "cases.html",
+        text: "cases"
+      },
+      {
+        link: "#",
+        text: "commercial design"
+      },
+      {
+        link: "#",
+        text: "creative states"
+      },
+    ]
+
+  -
+    var factsData = [
+      {
+        fact: "Kyiv",
+        descr: "Location",
+      },
+      {
+        fact: "1562",
+        descr: "Space (m²) ",
+      },
+      {
+        fact: "8",
+        descr: "Team",
+      },
+      {
+        fact: "2",
+        descr: "Term (month)",
+      },
+      {
+        fact: "Project",
+        descr: "Stage",
+      },
+    ]
+
+block content
+  +intro({
+    title: "Creative states",
+    lead: "Office space",
+    text: "CREATIVE STATES is one of the locations of the coworking network located on one of the last floors of the tallest business center in Kyiv Gulliver.",
+    breadcrumbsData,
+    extraClass: "intro--case",
+    tags: [
+      "offices",
+      "commercial design"
+    ]
+  })
+    +facts(factsData, "intro__facts")
+
+  .case-page
+    .container
+      .case-page__preview
+        .pic-wrap
+          +image(
+            "assets/img/delete/case/case-pic-01",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+      .constructor
+        .text-column.content-rule
+          h2 Design office of the company "CREATIVE STATES" — 1 562 sq.m.
+          p Creating super creative spaces is always an exciting process. This process was the creation of locations for the CREATIVE STATES GULLIVER. Having received a bold design project, we started to adapt it and develop all sections of the engineering part, and when this work was done, the customer invited us to complete a full range of construction and finishing works.
+
+        .pic-wrap
+          +image(
+            "assets/img/delete/case/case-pic-02",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+        .text-column.content-rule
+          h2 Onzo design – construction and finishing work in offices and other commercial premises!
+          p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards
+
+        .figures.two-columns
+          .figure
+            .figure__pic
+              +image(
+                "assets/img/delete/case/case-pic-03",
+                {
+                  class: "",
+                  alt: "",
+                }
+              )
+          .figure
+            .figure__pic
+              +image(
+                "assets/img/delete/case/case-pic-04",
+                {
+                  class: "",
+                  alt: "",
+                }
+              )
+
+        .text-column.content-rule
+          h2 Our task is to hear the client's need and create exactly the design that he represents
+          p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards.
+
+        .pic-wrap.pic-wrap--col-3
+          +image(
+            "assets/img/delete/case/case-pic-05",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+          +image(
+            "assets/img/delete/case/case-pic-06",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+          +image(
+            "assets/img/delete/case/case-pic-07",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+        .text-column.content-rule
+          h2 Onzo design – construction and finishing work in offices and other commercial premises!
+          p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards
+
+        .pic-wrap
+          +image(
+            "assets/img/delete/case/case-pic-08",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+  .container
+    +selected(selectedWorks, "", "Inspect other our works", "Selected works")
+
+  include /includes/contact-us

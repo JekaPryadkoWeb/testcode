@@ -1,0 +1,20 @@
+mixin post(data, index, extraClass="")
+  .post(class=extraClass)
+    a.post__link(href="blog-post.html")
+      +image(
+        data.pic,
+        {
+          class: "post__pic",
+          alt: data.title
+        }
+      )
+      .post__descr
+        h3.post__title!= data.title
+        p.post__text!= data.text
+      .post__more
+        span Read more
+        +icon("arrow", 30, 30)
+
+    - var num = index < 9 ? `0${index + 1}` : index + 1
+
+    span.post__num= num

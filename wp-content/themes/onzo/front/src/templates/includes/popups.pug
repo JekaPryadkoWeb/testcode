@@ -1,0 +1,20 @@
+.popup(data-popup="feedback")
+  .popup__overlay
+  .popup__inner
+    .popup__content
+      button.popup__close(type="button")
+      section.contacts-form
+        .container
+          h2.contacts-form__title Contact us
+
+          form.contacts-form__form(action="", method="POST")
+            label.visually-hidden(for="") Your name
+            input.contacts-form__field.field(type="text", placeholder="Your name", required)
+
+            label.visually-hidden(for="") Your email
+            input.contacts-form__field.field(type="email", placeholder="Your email", required)
+
+            label.visually-hidden(for="") Your message
+            textarea.contacts-form__field.field.field--textarea(placeholder="Your message", required)
+
+            button.contacts-form__btn.btn.btn--bg-black(type="submit") Send message

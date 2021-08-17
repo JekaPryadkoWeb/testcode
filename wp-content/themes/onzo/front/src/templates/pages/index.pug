@@ -1,0 +1,36 @@
+html
+  include /includes/head
+
+  body
+
+    -
+      var menu = [
+        ["home.html", "Home"],
+        ["service.html", "Service"],
+        ["services.html", "Services"],
+        ["case.html", "Case"],
+        ["cases.html", "Cases"],
+        ["blog.html", "Blog"],
+        ["blog-empty-search.html", "Blog: no results found"],
+        ["blog-post.html", "Article"],
+        ["about.html", "About"],
+        ["contacts.html", "Contacts"],
+        ["page-404.html", "404"],
+      ]
+
+    ul
+      each item in menu
+        li
+          a(href=item[0])!= item[1]
+
+    style.
+      ul {
+        margin: 0;
+        padding: 40px;
+        font-size: 16px;
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 20px;
+      }

@@ -1,0 +1,9 @@
+.content-section {
+  &:not(:last-child) {
+    margin-bottom: 70px;
+
+    @include desktop {
+      margin-bottom: 120px;
+    }
+  }
+}

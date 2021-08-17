@@ -1,0 +1,152 @@
+extends /layout
+include /mixins/case
+include /mixins/pagenavi
+include /mixins/scroll-up
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "cases.html",
+        text: "cases"
+      },
+    ]
+
+  -
+    var subcats = [
+      {
+        current: true,
+        text: "Office design"
+      },
+      {
+        text: "Restaurant design"
+      },
+      {
+        text: "Shop design"
+      },
+      {
+        text: "Hotel design"
+      },
+      {
+        text: "Mall design"
+      },
+      {
+        text: "Beauty salon design"
+      },
+      {
+        text: "Club design"
+      },
+      {
+        text: "Cinema design"
+      },
+      {
+        text: "Theatre design"
+      },
+      {
+        text: "Architecture buildings"
+      },
+    ]
+
+  -
+    var cases = [
+      {
+        pic: "assets/img/delete/cases/case-preview-01",
+        title: "Creative states",
+        text: "CREATIVE STATES is one of the locations of the coworking network located on one of the last floors of the tallest business center in Kyiv Gulliver. Having received a bold design project, we started to adapt it and develop all sections of the engineering...",
+        meta: {
+          city: "Kiyv",
+          area: "1 562",
+          time: "2 month"
+        }
+      },
+      {
+        pic: "assets/img/delete/cases/case-preview-02",
+        title: "Silpo",
+        text: "One of the key areas of our business is the design and construction of offices \"turnkey\". When large companies decide to make a new office, very often it becomes almost impossible for them without the help of professionals...",
+        meta: {
+          city: "Kiyv",
+          area: "8 802",
+          time: "4 years"
+        }
+      },
+      {
+        pic: "assets/img/delete/cases/case-preview-03",
+        title: "IT-Dnipro",
+        text: "An American corporation, another after the revenue grower, a software protection programmer, the largest software protection programmer for organizations, a great server hosting provider, and one of the top graders of the...",
+        meta: {
+          city: "Kiyv",
+          area: "1 300",
+          time: "4 month"
+        }
+      },
+      {
+        pic: "assets/img/delete/cases/case-preview-04",
+        title: "Regional Gas Company",
+        text: "For the new office of RGK, it was required to create a design project that would overcome corporate standards and company culture. Taking up this work, we prepared a draft which was approved almost immediately...",
+        meta: {
+          city: "Kiyv",
+          area: "2 000",
+          time: "4 months"
+        }
+      },
+      {
+        pic: "assets/img/delete/cases/case-preview-05",
+        title: "Voki Games",
+        text: "To move the office of Voki Games, we created a unique office design project, which the customer liked almost immediately. Decorative bricks and metal elements gave the office a style, and materials such as carpet tiles for the office, office furniture...",
+        meta: {
+          city: "Kiyv",
+          area: "2 070",
+          time: "4 months"
+        }
+      },
+      {
+        pic: "assets/img/delete/cases/case-preview-06",
+        title: "British Council",
+        text: "International organizations always choose only the best companies for cooperation. And UK companies are closely monitoring all the details of the process. By providing us with a construction project, the British Council emphasized how....",
+        meta: {
+          city: "Kiyv",
+          area: "1 500",
+          time: "4 months"
+        }
+      },
+    ]
+
+block content
+  +intro({
+    title: "Cases",
+    lead: "Projects carefully thought out to the smallest details",
+    text: "Onzo design provides excellent level of commercial design. Company have been done more than 250 finished objects.",
+    breadcrumbsData,
+    extraClass: "intro--cases"
+  })
+    ul.cats
+      li.cats__item
+        a.cats__link.bordered-btn(href="#") Private
+      li.cats__item.cats__item--current
+        a.cats__link.bordered-btn.bordered-btn--red Business
+      li.cats__item
+        a.cats__link.bordered-btn(href="#") Network engineering
+
+    ul.subcats.links-wrap
+      each item in subcats
+        li.subcats__item(class={"subcats__item--current": item.current})
+          - var linkAttr = item.current ? {} : {href: "#"}
+          a.subcats__link&attributes(linkAttr)!= item.text
+
+  section.cases
+    .container
+      li.cases__list
+        each item in cases
+          +case(item)
+
+      .show-more
+        a.boxed-link.boxed-link--big(href="#") See more articles
+      +pagenavi()
+
+  +scrollUp()
+
+  include /includes/contact-us

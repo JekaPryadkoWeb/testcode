@@ -1,0 +1,28 @@
+mixin case(data, extraClass="")
+  .case.links-wrap(class=extraClass)
+    a.case__link(href="case.html")
+      .case__preview-wrap
+        +image(
+          data.pic,
+          {
+            class: "case__pic",
+            alt: data.title
+          }
+        )
+
+      h3.case__title.headline!= data.title
+    p.case__descr!= data.text
+
+    .case__bottom.case-meta
+      ul.case-meta__list
+        li.case-meta__item
+          +icon("location", 20, 20)
+          span!= data.meta.city
+        li.case-meta__item
+          +icon("area", 20, 20)
+          span!= data.meta.area
+        li.case-meta__item
+          +icon("time", 20, 20)
+          span!= data.meta.time
+      a.case-meta__more(href="#")
+        +icon("arrow", 20, 20)

@@ -1,0 +1,12 @@
+.container {
+  max-width: $media-desktop-fix;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include desktop {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}

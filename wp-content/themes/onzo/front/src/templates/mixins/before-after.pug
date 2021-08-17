@@ -1,0 +1,15 @@
+mixin beforeAfter(beforePic, afterPic, beforeTitle, afterTitle, extraClass="")
+  .before-after(class=extraClass)
+    .before-after__title.before-after__title--before!= beforeTitle
+    .before-after__before
+      +image(beforePic)
+      .before-after__before-overlay
+
+    .before-after__title.before-after__title--after!= afterTitle
+    .before-after__after
+      +image(afterPic)
+      .before-after__after-overlay
+
+    .before-after__handler
+      +icon("arrow", 20, 20)
+      +icon("arrow", 20, 20)

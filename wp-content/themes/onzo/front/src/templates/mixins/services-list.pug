@@ -1,0 +1,5 @@
+mixin servicesList(data, extraClass="", inverted = false)
+  ul.services-list(class=extraClass)
+    each item in data
+      li.services-list__item
+        a.services-list__link.bordered-btn(href="service.html", class=inverted ? "services-list__link--inverted  bordered-btn--black" : "")!= item

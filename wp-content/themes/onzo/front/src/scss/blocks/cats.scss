@@ -1,0 +1,46 @@
+.cats {
+  @include reset-list;
+  margin-bottom: 65px - 20px;
+
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 55px - 20px;
+    margin-top: 120px;
+  }
+}
+
+.cats__item {
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 24px;
+  white-space: nowrap;
+
+  @include desktop {
+    min-width: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-grow: 1;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  &--current {
+    color: $red;
+
+    .cats__link::before {
+      border-color: $red;
+    }
+  }
+}
+
+.cats__link {
+  width: 100%;
+  padding: 20px;
+
+  @include desktop {
+    padding: 40px;
+  }
+}

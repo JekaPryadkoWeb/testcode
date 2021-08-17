@@ -1,0 +1,89 @@
+extends /layout
+include /mixins/selected
+include /mixins/before-after
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "services.html",
+        text: "services"
+      },
+      {
+        link: "#",
+        text: "for business"
+      },
+      {
+        link: "#",
+        text: "office design"
+      },
+    ]
+
+block content
+  +intro({
+    title: "Office design",
+    lead: "Services for business",
+    text: "Onzo design provides excellent level of commercial design. Company have been done more than 250 finished objects.",
+    extraClass: "intro--service",
+    breadcrumbsData
+  })
+
+    .intro__two-cols.text-two-cols
+      p Are you looking for an interior design or realization for your (business) space or home? Whether you are looking for a design for a   functional space or a luxurious space, Onzo will help you realize a suitable solution. We ensure that your space is fully designed and that the completion of your project is realized. We also provide (project) furniture to complete your design. During this period we are your contact person who tailors everything to your specific wishes. This provides overview and convenience during (re) building!
+      p It is difficult to get a good picture of your space or home from a drawing. You will always receive a 3D drawing from us so that you get a good impression of the space that has been designed for you. Everything is thought of; ceilings, (system) walls, the design and the colors and materials used. Nothing is too crazy for Onzo. We discuss your wishes and requirements in advance with which the designer will start working later!
+
+  .service-page.wrapper
+    .container
+      .service-page__preview
+        .pic-wrap
+          +image(
+            "assets/img/delete/service/service-pic-01",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+      .constructor
+        section.info-block.info-block--content.full-width
+          .container
+            .info-block__inner
+              .info-block__content.content-rule
+                h2 We discuss your wishes and requirements in advance with which the designer will start working later!
+                p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards
+
+              .info-block__pic-wrap
+                +image("assets/img/delete/service/service-pic-02")
+
+        +beforeAfter(
+          "assets/img/delete/service/service-before",
+          "assets/img/delete/service/service-after",
+          "Design project",
+          "Finished project"
+        )
+
+        .selected-wrap.selected-wrap--content
+          +selected(selectedWorks, "", "Recent office design projects", "Selected works")
+
+        section.content-two-cols.content-rule
+          h2 Specialists
+          .text-two-cols
+            p Are you looking for an interior design or realization for your (business) space or home? Whether you are looking for a design for a   functional space or a luxurious space, Onzo will help you realize a suitable solution. We ensure that your space is fully designed and that the completion of your project is realized. We also provide (project) furniture to complete your design. During this period we are your contact person who tailors everything to your specific wishes. This provides overview and convenience during (re) building!
+            p It is difficult to get a good picture of your space or home from a drawing. You will always receive a 3D drawing from us so that you get a good impression of the space that has been designed for you. Everything is thought of; ceilings, (system) walls, the design and the colors and materials used. Nothing is too crazy for Onzo. We discuss your wishes and requirements in advance with which the designer will start working later!
+
+        .pic-wrap
+          +image(
+            "assets/img/delete/service/service-pic-03",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+  include /includes/services
+
+  include /includes/contact-us

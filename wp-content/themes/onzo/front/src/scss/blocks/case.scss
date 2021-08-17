@@ -1,0 +1,42 @@
+.case {
+  margin-bottom: 80px;
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+
+.case__preview-wrap {
+  display: block;
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: 35px;
+  }
+}
+
+.case__pic {
+  display: block;
+}
+
+.case__title {
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: 16px;
+  }
+
+}
+
+.case__descr {
+  margin-top: 0;
+  margin-bottom: 35px;
+
+  @include desktop {
+    margin-bottom: 28px;
+  }
+}
+
+.case__bottom {
+
+}

@@ -1,0 +1,122 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: .4s;
+  transition-property: opacity;
+
+  &--opened {
+    pointer-events: auto;
+    opacity: 1;
+
+    .popup__content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.popup__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  opacity: .4;
+}
+
+.popup__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+.popup__content {
+  width: 100%;
+  min-height: 162px;
+  color: #ffffff;
+  background-color: #000000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-property: transform, opacity;
+  transition-duration: .4s;
+
+  @include desktop {
+    min-height: 284px;
+    padding-top: 128px;
+  }
+}
+
+.popup__close {
+  @include reset-button;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(#fff, .5);
+
+  @include desktop {
+    top: 100px;
+    right: 140px;
+    width: 84px;
+    height: 84px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -13px;
+    background-color: #ffffff;
+    content: "";
+    transition-duration: .4s;
+    transition-property: opacity;
+
+    @include desktop {
+      width: 56px;
+      margin-left: -28px;
+    }
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.popup__head {
+  min-height: 48px + 30px;
+
+  @include desktop {
+    min-height: 48px + 54px;
+  }
+}
+
+.popup__title {
+  margin-top: 0;
+  margin-bottom: 54px;
+  font-size: 40px;
+  line-height: 1.2;
+  text-align: center;
+}

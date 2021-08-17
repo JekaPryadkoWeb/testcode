@@ -1,0 +1,30 @@
+include /mixins/services-list
+
+section.services
+  .container
+    .services__inner
+      .services__content
+        h2.services__title.title Services
+        p.services__descr.headline Our task is to hear the client's need and create exactly the design that he represents
+        .services__text
+          p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards.
+        +image(
+          "assets/img/delete/services-pic",
+          {
+            class: "services__pic",
+            alt: ""
+          }
+        )
+
+      +servicesList(
+        [
+          "Office design",
+          "Design of the restaurant",
+          "Shop design",
+          "Apartments design",
+        ],
+        "services__list  services-list--white"
+      )
+
+      .services__more-wrap
+        a.services__more.boxed-link.boxed-link--big(href="services.html") See all services

@@ -1,0 +1,95 @@
+extends /layout
+include /mixins/selected
+
+append vars
+  - var headerClass = "header--home"
+
+  -
+    var homeIntroSlides = [
+      {
+        name: "Creative states",
+        pic: "assets/img/delete/intro-pic-full.jpg"
+      },
+      {
+        name: "Tsum",
+        pic: "assets/img/delete/intro-pic-full-2.jpg"
+      },
+      {
+        name: "Silpo",
+        pic: "assets/img/delete/intro-pic-full-3.jpg"
+      }
+    ]
+
+block top
+  include /includes/svg-morph
+
+block content
+  section.home-intro.intro
+    .container
+      .home-intro__inner
+
+        .home-intro__content
+          h1.home-intro__title.page-title Onzo design
+          p.home-intro__text.lead Design and construction work for commercial premises
+
+          .home-intro__slider.swiper-container
+            .home-intro__slider-inner.swiper-wrapper
+              each item in homeIntroSlides
+                .home-intro__slide.swiper-slide
+                  a.home-intro__watch-link.boxed-link(href="case.html") See project
+
+          .home-intro__shape(
+            data-animation-path-duration="2000",
+            data-animation-path-easing="easeOutElastic",
+            data-morph-path="M 418.1,159.8 C 460.9,222.9 497,321.5 452.4,383.4 417.2,432.4 371.2,405.6 271.3,420.3 137.2,440 90.45,500.6 42.16,442.8 -9.572,381 86.33,289.1 117.7,215.5 144.3,153.4 145.7,54.21 212.7,36.25 290.3,15.36 373.9,94.6 418.1,159.8 Z",
+            data-path-scaleY="1.1",
+            data-path-translatex="5%",
+            data-path-translatey="-10%",
+            data-image-scaleX="1.2",
+            data-image-scaleY="1.2",
+            data-animation-deco-duration="2000",
+            data-animation-deco-delay="100",
+            data-deco-rotate="-10"
+          )
+            svg.item__svg(width="1570px" height="1256px" viewBox="0 0 500 500")
+              clipPath(id="clipShape2")
+                path.item__clippath(d="M 378.1,121.2 C 408.4,150 417.2,197.9 411,245.8 404.8,293.7 383.5,341.7 353.4,370.7 303.2,419.1 198.7,427.7 144.5,383.8 86.18,336.5 67.13,221.3 111.9,161 138.6,125 188.9,99.62 240.7,90.92 292.4,82.24 345.6,90.32 378.1,121.2 Z")
+              g.item__deco
+                use(xlink:href="#deco2")
+              g(clip-path="url(#clipShape2)")
+                each item, i in homeIntroSlides
+                  image.item__img(
+                    xlink:href=item.pic,
+                    x="0",
+                    y="0",
+                    height="500px",
+                    width="500px"
+                  )
+
+          ol.home-intro__nav
+            each item in homeIntroSlides
+              li.home-intro__nav-item
+                button.home-intro__nav-link(type="button")!= item.name
+
+  .selected-wrap.selected-wrap--home
+    .container
+      +selected(selectedWorks, "selected--home", false, "Selected works")
+
+  .about-article.full-width
+    .container
+      .about-article__inner
+        h2.about-article__title.title About us
+        p.about-article__descr.headline Onzo design – construction and finishing work in offices and other commercial premises!
+        .about-article__content
+          .about-article__text.content-rule
+            p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards
+          a.about-article__link.boxed-link(href="about.html") Read more about
+
+        .about-article__pic-wrap
+          +image("assets/img/delete/about-pic")
+
+  include /includes/blog-feat
+
+  include /includes/services
+
+  include /includes/contact-us

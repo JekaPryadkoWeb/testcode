@@ -1,0 +1,91 @@
+.services {
+  padding-top: 75px;
+  color: #ffffff;
+  background-color: #000;
+  background-image: linear-gradient(to top, #fff 130px, transparent 130px);
+  background-position: bottom;
+
+  @include desktop {
+    padding-top: 105px;
+    background-image: linear-gradient(to top, #fff 185px, transparent 185px);
+  }
+}
+
+.services__inner {
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.services__content {
+  margin-bottom: 64px;
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    width: desk-size(825);
+    margin-bottom: -180px;
+  }
+}
+
+.services__title {
+  margin-bottom: 30px;
+}
+
+.services__descr {
+  margin-bottom: 18px;
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.services__text {
+  margin-bottom: 55px;
+  font-size: 20px;
+  line-height: 1.4;
+
+  p {
+    margin: 0;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+    font-size: 24px;
+  }
+}
+
+.services__pic {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+}
+
+.services__list {
+  padding-bottom: 55px + 70px;
+
+  @include desktop {
+    width: desk-size(684);
+    padding-bottom: 60px;
+  }
+}
+
+.services__more-wrap {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+
+  @include desktop {
+    justify-content: flex-start;
+    width: desk-size(684);
+    height: 180px;
+    padding-left: desk-size(150);
+    margin-left: auto;
+    border-left: 1px solid #C4C4C4;
+  }
+}

@@ -1,0 +1,54 @@
+.selected {
+  text-align: center;
+
+  &--home {
+
+    .selected__title {
+      color: #ffffff;
+
+      @include only-mob {
+        display: none;
+      }
+    }
+  }
+}
+
+.selected__headline {
+  font-size: 50px;
+  text-align: left;
+
+  @include desktop {
+    font-size: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
+
+.selected__inner {
+  position: relative;
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.selected__title {
+  margin-bottom: 32px;
+  text-align: left;
+
+  @include desktop {
+    position: absolute;
+    top: 30px;
+    left: 0;
+  }
+}
+
+.selected__item {
+  text-align: left;
+}
+
+.selected__more {
+  display: inline-block;
+  margin-top: 10px;
+}

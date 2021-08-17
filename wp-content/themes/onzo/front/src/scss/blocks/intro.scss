@@ -1,0 +1,170 @@
+.intro {
+  padding-top: 125px;
+  padding-bottom: 190px;
+  color: #ffffff;
+  background-color: #000000;
+
+  &--contacts {
+    padding-bottom: 30px;
+  }
+
+  &--article {
+    padding-bottom: 90px;
+  }
+
+  &--case {
+    padding-bottom: 180px;
+  }
+
+  &--cases {
+    padding-bottom: 145px;
+  }
+
+  &--service {
+    padding-bottom: 110px;
+  }
+
+  &--services {
+    padding-bottom: 120px;
+  }
+
+  @include desktop {
+    padding-top: 230px;
+    padding-bottom: 240px;
+
+    &--services {
+      padding-bottom: 400px;
+    }
+
+    &--contacts {
+      padding-bottom: 70px;
+    }
+  }
+}
+
+.intro__top {
+  margin-bottom: 46px;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    min-height: 30px;
+    margin-bottom: 120px;
+  }
+}
+
+.intro__tags {
+  @include reset-list;
+
+  display: none;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
+  font-size: 24px;
+  line-height: 1.2;
+
+  @include desktop {
+    display: flex;
+  }
+}
+
+.intro__tags-item {
+  text-transform: lowercase;
+
+  @include desktop {
+    margin-bottom: 10px;
+
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
+  }
+}
+
+
+.intro__head {
+
+  @include desktop {
+    text-align: center;
+  }
+}
+
+.intro__title {
+  margin-bottom: 24px;
+
+  @include desktop {
+    max-width: 1000px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.intro__lead {
+  margin-bottom: 20px;
+
+  @include desktop {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    &--wide {
+      max-width: 1280px;
+    }
+  }
+}
+
+.intro__text {
+  font-size: 18px;
+  line-height: 1.4;
+
+  p {
+    margin: 0;
+  }
+
+  @include desktop {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--wide {
+      max-width: 700px;
+      font-size: 24px;
+    }
+
+    &--large {
+      max-width: 1080px;
+      font-size: 24px;
+    }
+  }
+}
+
+.intro__content {
+  margin-top: 50px;
+
+  &:empty {
+    display: none;
+  }
+
+  @include desktop {
+    margin-top: 60px;
+  }
+}
+
+.intro__facts {
+
+  @include desktop {
+    padding-top: 12px;
+  }
+}
+
+.intro__two-cols {
+  p {
+    margin: 0;
+  }
+
+  @include desktop {
+    column-count: 2;
+    column-gap: 20px;
+  }
+}

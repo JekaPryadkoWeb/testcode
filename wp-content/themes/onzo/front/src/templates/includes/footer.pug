@@ -1,0 +1,125 @@
+-
+  var schedule = [
+    {
+      day: "Monday",
+    },
+    {
+      day: "Tuesday",
+    },
+    {
+      day: "Wednesday",
+    },
+    {
+      day: "Thursday",
+      state: {
+        today: true,
+        closed: true,
+        tooLate: true,
+        tooEarly: false
+      }
+    },
+    {
+      day: "Friday",
+    },
+    {
+      day: "Saturday",
+      hours: "Closed"
+    },
+    {
+      day: "Sunday",
+      hours: "Closed"
+    },
+  ]
+
+-
+  var footerNavMain = [
+    {
+      link: "home.html",
+      text: "Home"
+    },
+    {
+      link: "cases.html",
+      text: "Cases"
+    },
+    {
+      link: "blog.html",
+      text: "Blog"
+    },
+    {
+      link: "contacts.html",
+      text: "Contacts"
+    },
+  ]
+
+-
+  var footerNavServices = [
+    {
+      link: "service.html",
+      text: "Office design"
+    },
+    {
+      link: "service.html",
+      text: "Design of the restaurant"
+    },
+    {
+      link: "service.html",
+      text: "Shop design"
+    },
+    {
+      link: "service.html",
+      text: "Apartments design"
+    },
+  ]
+
+
+footer.footer
+  .footer__inner.container
+    .footer__col
+      a.footer__logo(href="index.html")
+        img(src="assets/img/logo-black.svg", width="206", height="50", alt="Onzo design")
+      p.footer__text Ukraine, 03150, Kiev <br> 86B Kazimira Malevitcha St.
+      .footer__text.links-wrap
+        p.footer__contact
+          | email:&nbsp;
+          a(href="mailto:clients@onzodesign.ua") clients@onzodesign.ua
+        p.footer__contact
+          | phone:&nbsp;
+          a(href="tel:+380443343211") +38 044 334 32 11
+
+    .footer__col.footer__col--nav
+      h3.footer__subtitle Main
+      ul.footer__nav.links-wrap
+        each item in footerNavMain
+          li: a(href=item.link)!= item.text
+
+    .footer__col.footer__col--nav
+      h3.footer__subtitle Services
+      ul.footer__nav.links-wrap
+        each item in footerNavServices
+          li: a(href=item.link)!= item.text
+
+    .footer__col
+      h3.footer__subtitle Opening hours
+
+      ul.footer__schedule.schedule
+        each item in schedule
+          - var isClosed = item.state ? item.state.closed : false
+          - var isToday = item.state ? item.state.today : false
+          - var isTooLate = item.state ? item.state.tooLate : false
+          - var isTooEarly = item.state ? item.state.tooEarly : false
+
+          li.schedule__item(class=isToday ? "schedule__item--today" : "")
+            span.schedule__day!= item.day
+            span.schedule__hours
+              if item.hours
+                != item.hours
+
+              else
+                span(class=isTooEarly ? "schedule__mark" : "") 08:00&nbsp;
+                | -
+                span(class=isTooLate ? "schedule__mark" : "") &nbsp;17:00
+
+              if isClosed
+                small.schedule__note Closed now
+
+    p.footer__copy.footer__text © 2001-2020 Onzo Design. All rights reserved.

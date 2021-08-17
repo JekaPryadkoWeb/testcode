@@ -1,0 +1,25 @@
+.text-two-cols {
+  line-height: 1.4;
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+
+      @include desktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include desktop {
+    column-count: 2;
+    column-gap: 20px;
+    font-size: 18px;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}

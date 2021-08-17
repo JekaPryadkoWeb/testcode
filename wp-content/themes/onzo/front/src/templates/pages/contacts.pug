@@ -1,0 +1,38 @@
+extends /layout
+
+append vars
+
+block content
+  +intro({
+    title: "Contacts",
+    lead: "Let's talk about your ideas!",
+    text: "We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline.",
+    textMod: "wide",
+    extraClass: "intro--contacts"
+  })
+    .contacts.links-wrap
+      p.contacts__item.contacts__item--address
+        +icon("location", 20, 20)
+        span.contacts__text Ukraine, 03150, Kiev 86B Kazimira Malevitcha St.
+      p.contacts__item.contacts__item--email
+        +icon("email", 20, 20)
+        a.contacts__link(href="mailto:clients@onzodesign.ua") email: clients@onzodesign.ua
+      p.contacts__item.contacts__item--phone
+        +icon("phone", 20, 20)
+        a.contacts__link(href="tel:+380443343211") phone: +38 044 334 32 11
+
+  section.contacts-form
+    .container
+      h2.contacts-form__title Contact us
+
+      form.contacts-form__form(action="", method="POST")
+        label.visually-hidden(for="") Your name
+        input.contacts-form__field.field(type="text", placeholder="Your name", required)
+
+        label.visually-hidden(for="") Your email
+        input.contacts-form__field.field(type="email", placeholder="Your email", required)
+
+        label.visually-hidden(for="") Your message
+        textarea.contacts-form__field.field.field--textarea(placeholder="Your message", required)
+
+        button.contacts-form__btn.btn.btn--bg-black(type="submit") Send message

@@ -1,0 +1,42 @@
+.pic-wrap {
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+
+      @include desktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 70px;
+
+    @include desktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  @include desktop {
+
+    &--col-2,
+    &--col-3 {
+      display: grid;
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+
+    &--col-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--col-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

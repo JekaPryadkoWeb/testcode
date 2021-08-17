@@ -1,0 +1,124 @@
+extends /layout
+
+include /mixins/brands
+
+append vars
+  -
+    var breadcrumbsData = [
+      {
+        link: "home.html",
+        text: "home"
+      },
+      {
+        link: "about.html",
+        text: "about"
+      },
+    ]
+
+  -
+    var logos = [
+      {
+        src: "assets/img/delete/logo-mondelez.svg",
+        width: "170",
+        height: "40",
+        alt: "Mondelez"
+      },
+      {
+        src: "assets/img/delete/logo-danone.svg",
+        width: "130",
+        height: "41",
+        alt: "Danone"
+      },
+      {
+        src: "assets/img/delete/logo-kernel.svg",
+        width: "123",
+        height: "31",
+        alt: "Kernel"
+      },
+      {
+        src: "assets/img/delete/logo-pepsico.svg",
+        width: "155",
+        height: "35",
+        alt: "Pepsico"
+      },
+      {
+        src: "assets/img/delete/logo-nestle.svg",
+        width: "130",
+        height: "36",
+        alt: "Nestle"
+      },
+      {
+        src: "assets/img/delete/logo-samsung.svg",
+        width: "145",
+        height: "29",
+        alt: "Samsung"
+      },
+    ]
+
+block content
+  +intro({
+    title: "About us",
+    lead: "Onzo design – construction and finishing work in offices and other commercial premises!",
+    text: "We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards",
+    textMod: "large",
+    breadcrumbsData
+  })
+
+  .about-page.wrapper
+    .container
+      section.about-page__preview
+        .pic-wrap
+          +image(
+            "assets/img/delete/about/about-pic-01",
+            {
+              class: "",
+              alt: "",
+            }
+          )
+
+      section.about-page__section
+        .about-article.full-width
+          .container
+            .about-article__inner
+              h2.about-article__title.title Who we are
+              p.about-article__descr.headline Onzo design is a profesional team with a strong experience and an exellent reputation.
+              .about-article__content
+                .about-article__text.content-rule
+                  p We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards. We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline. We use only innovative technologies and high-quality materials of European standards.We offer a range of services, which includes the entire list of construction works of any complexity and with virtually any deadline.
+
+              .about-article__pic-wrap
+                +image("assets/img/delete/about/about-pic-02")
+
+      section.about-page__section
+        +brands({
+          mod: "reversed",
+          title: "Our partners",
+          text: "We work only with reliable partners, thanks to which we provide the best service and think over the highest quality solutions for our clients",
+          logos
+        })
+
+      section.content-two-cols.content-rule
+        h2 Our specialists
+        .text-two-cols
+          p Are you looking for an interior design or realization for your (business) space or home? Whether you are looking for a design for a   functional space or a luxurious space, Onzo will help you realize a suitable solution. We ensure that your space is fully designed and that the completion of your project is realized. We also provide (project) furniture to complete your design. During this period we are your contact person who tailors everything to your specific wishes. This provides overview and convenience during (re) building!
+
+          p It is difficult to get a good picture of your space or home from a drawing. You will always receive a 3D drawing from us so that you get a good impression of the space that has been designed for you. Everything is thought of; ceilings, (system) walls, the design and the colors and materials used. Nothing is too crazy for Onzo. We discuss your wishes and requirements in advance with which the designer will start working later!
+
+      .pic-wrap
+        +image(
+          "assets/img/delete/about/about-pic-03",
+          {
+            class: ""
+          }
+        )
+
+      section.about-page__section
+        +brands({
+          title: "Our clients",
+          text: "Our clients trust us due to our excellent specialists and many years of experience",
+          logos
+        })
+
+  include /includes/services
+
+  include /includes/contact-us

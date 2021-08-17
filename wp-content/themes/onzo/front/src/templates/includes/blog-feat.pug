@@ -1,0 +1,33 @@
+include /mixins/post
+
+-
+  var posts = [
+    {
+      pic: "assets/img/delete/blog-thumb-01",
+      title: "Fresh trends in office design ",
+      text: "We shared a lot of research we did while working on the project"
+    },
+    {
+      pic: "assets/img/delete/blog-thumb-02",
+      title: "Fresh trends in office design ",
+      text: "We shared a lot of research we did while working on the project"
+    },
+    {
+      pic: "assets/img/delete/blog-thumb-03",
+      title: "Fresh trends in office design ",
+      text: "We shared a lot of research we did while working on the project"
+    }
+  ]
+
+section.blog-feat
+  .container
+    h2.blog-feat__title.title Recent publications
+    p.blog-feat__descr.headline Read our blog
+    .blog-feat__slider.swiper-container
+      ol.blog-feat__posts.swiper-wrapper
+        each post, i in posts
+          li.blog-feat__post-wrap.swiper-slide
+            +post(post, i, "post--feat blog-feat__post")
+
+    .blog-feat__more-wrap
+      a.blog-feat__more.boxed-link.boxed-link--big(href="blog.html") See all articles

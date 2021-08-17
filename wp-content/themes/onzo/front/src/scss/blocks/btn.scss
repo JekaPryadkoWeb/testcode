@@ -1,0 +1,42 @@
+.btn {
+  @include reset-button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 60px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-align: center;
+
+  background-color: $red;
+  border-radius: 30px;
+
+  outline: 0;
+  cursor: pointer;
+  transition-duration: .25s;
+  transition-property: color, background-color;
+
+  &:hover,
+  &:focus {
+    transition-duration: .1s;
+    color: #ffffff;
+    background-color: #000;
+  }
+
+  &--bg-black {
+
+    &:hover,
+    &:focus {
+      color: $red;
+      background-color: #fff;
+    }
+  }
+
+  @include not-mobile {
+    width: auto;
+  }
+}

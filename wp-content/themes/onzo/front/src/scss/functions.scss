@@ -1,0 +1,11 @@
+@function desk-size($value) {
+  @return $value / 1670 * 100%;
+}
+
+@function desk-vw($value) {
+  @return $value / 1920 * 100vw;
+}
+
+@function desk-middle-vw($value) {
+  @return $value / (1670 + 150) * 100vw;
+}

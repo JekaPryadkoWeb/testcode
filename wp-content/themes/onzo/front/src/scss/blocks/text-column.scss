@@ -1,0 +1,16 @@
+.text-column {
+  line-height: 1.4;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  @include desktop {
+    width: desk-size(825);
+    margin-left: desk-size(422);
+  }
+}

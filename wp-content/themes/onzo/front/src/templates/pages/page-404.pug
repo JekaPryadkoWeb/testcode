@@ -1,0 +1,21 @@
+extends /layout
+
+append vars
+
+block content
+  section.intro.page-404
+    .container
+      .page-404__inner
+        .page-404__pic
+          +image(
+            "assets/img/pic-404",
+            {
+              class: "",
+              alt: "404",
+            },
+            "png"
+          )
+        .page-404__content
+          h1.page-404__title.headline It’s looking like this page no longer exist.
+          p.page-404__text.lead But you always can check our works here
+          a.page-404__btn.btn.btn--bg-black(href="cases.html") Check our cases

@@ -1,0 +1,57 @@
+.boxed-link {
+  position: relative;
+  display: inline-block;
+  padding: 15px 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  transition-property: color;
+  transition-duration: .2s;
+  will-change: color;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid currentColor;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: .5;
+    content: "";
+    transition-property: opacity, border-color, width, height;
+    transition-duration: inherit;
+    will-change: opacity, width, height;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    color: $red;
+    transition-duration: .05s;
+
+    &::before {
+      border-color: $red;
+    }
+  }
+
+  @include desktop {
+    &--big {
+      padding: 16px 20px;
+      font-size: 32px;
+      line-height: 38px;
+
+      &::before {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
