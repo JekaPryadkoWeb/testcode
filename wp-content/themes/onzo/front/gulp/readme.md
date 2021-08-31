@@ -170,7 +170,7 @@ gulp-webpack-starter
 
 В `criticalPath` указать урл нужной страницы и имена файлов записать в массив. По урлу будет сделан запрос и спаршен html страницы. После этого будет определен стиль для первого экрана с помощью npm пакета [critical](https://www.npmjs.com/package/critical) и сохранен в папку со стилями `path.buildStyles`. Так же критические стили почистятся и минимизируются с помощью [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) и эти настройки идут отдельно от настроек для стилей. После всего этого папка с html будет удалена.
 
-Подключение осуществляется с помощью функции [custom_enqueu_style](https://gicker.co/boosta/web-camp/sites/gwt.com/-/snippets/58)
+Подключение осуществляется с помощью функции [custom_enqueu_style]()
 
 
 ### :camera: Изображения
