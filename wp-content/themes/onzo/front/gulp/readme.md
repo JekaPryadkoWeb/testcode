@@ -32,7 +32,7 @@
 
 ## :hammer_and_wrench: Установка Docker
 
-Рабочий докер файл можна найти [ТУТ](https://gicker.co/shared/etc/-/blob/master/template/dockerfile/wordpress:php7.1_gwt.com)
+Рабочий докер файл можна найти [ТУТ]
 
 ## :open_file_folder: Файловая структура
 
